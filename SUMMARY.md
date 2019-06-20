@@ -1,5 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-* [How 2 work](shumeng/how_to_work.md)
-
+* [Thinking](Thinking)
+  * [How to work](shumeng/how_to_work.md)
+* [Business](Business)
