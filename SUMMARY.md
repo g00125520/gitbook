@@ -5,6 +5,7 @@
   * [git](linux/git.md)
   * [nginx](linux/nginx.md)
   * [vim](linux/vim.md)
+  * [bash](linux/bash.md)
 * Java
   * [kafka](java/kafka.md)
   * [hbase](java/hbase.md)
