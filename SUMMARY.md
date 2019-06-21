@@ -12,3 +12,6 @@
   * [lock](arch/lock.md)
 * Tools
   * [vscode](tools/vscode.md)
+* Stat
+  * [r](stat/r.md)
+  
