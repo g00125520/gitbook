@@ -9,6 +9,7 @@
 * Java
   * [kafka](java/kafka.md)
   * [hbase](java/hbase.md)
+  * [maven](java/mvn.md)
 * Arch
   * [lock](arch/lock.md)
 * Tools
