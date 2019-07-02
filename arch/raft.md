@@ -1,0 +1,13 @@
+# 分布式一致性算法raft
+
+分布式系统中，一致性算法至关重要。Paxos是一种基于消息传递的一致性算法。实现的有Chubby、libpaxos等。zk采用ZAB(zookeeper atomic broadcast)也是基于Paxos算法的，但zab主要用于构建一个高可用的分布式数据主备系统，而Paxos则用于构建一个分布式的一致性状态机系统。相较于Paxos，Raft通过逻辑分离使其更容易理解和实现，实现的有etcd、Consul。
+
+一个raft集群包含若干节点，节点有三种状态：Leader、Follower、Candidate。Leader负责日志同步管理，处理来自客户端的请求，与Follower保持心跳联系。Follower响应Leader的日志同步请求，响应Candidate邀票请求，以及转发客户端请求给Leader。Candidate负责选举投票，集群启动或者Leader宕机时，Follower转为Candidate发起选举，胜出后转为Leader。
+
+为简化逻辑和实现，raft将一致性问题分解为三个相对独立的子问题。选举：当集群初创或leader宕机，一个新的Leader需要被选举出来。日志复制：Leader接收来自客户端的请求，并将其以日志条目的形式复制到集群中的其他节点，并强制要求其他节点的日志和自己的保持一致。安全性：如果有任何的服务器节点已经应用了一个确定的日志条目到它的状态机中，那么其他服务器节点不能在同一个日志索引位置应用一个不同的指令。
+
+## Leader election
+
+集群启动时，所有节点状态都是Follower，初始Term为0，同时启动选举定时器，每个节点的选举定时器超时时间在100-500毫秒直接并且不一致，避免同时发起选举。由于没有Leader，节点
+
+
