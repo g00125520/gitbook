@@ -15,3 +15,7 @@ rewrite ^(.*) https://$server_name$1 permanent;
 - proxy_set_header Host  $host;如果源没有host，则为主机域名；
 - proxy_set_header Host  $host:$proxy_port;
 
+
+## openresty and lua
+
+[openresty](http://openresty.org/en/getting-started.html)
