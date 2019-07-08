@@ -1,0 +1,10 @@
+# understand mysql
+
+## index
+
+
+
+## lock
+
+
+
