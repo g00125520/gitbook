@@ -7,6 +7,7 @@
   * [vim](linux/vim.md)
   * [bash](linux/bash.md)
   * [etcd](linux/etcd.md)
+  * [mysql](linux/mysql.md)
 * Java
   * [kafka](java/kafka.md)
   * [hbase](java/hbase.md)

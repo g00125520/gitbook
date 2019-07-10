@@ -1,0 +1,31 @@
+{
+    "title" : "tech",
+    "author" : "laodao",
+    "description" : "research tech",
+    "language" : "zh-hans",
+    "links" : {
+        "sidebar" : {
+            "Home" : "localhost:4000"
+        }
+    },
+    "styles" : {
+        "website" : "styles/website.css",
+        "ebook" : "styles/ebook.css",
+        "pdf" : "styles/pdf.css",
+        "mobi" : "styles/mobi.css",
+        "epub" : "styles/epub.css"
+    },
+    "plugins" : [
+        "search",
+        "chapter-fold",
+        "back-to-top-button",
+        "-expandable-chapters-small",
+        "-insert-logo"
+    ],
+    "pluginsConfig" : {
+        "insert-logo" : {
+            "url" : "images/logo.png",
+            "style" : "background: none; max-height: 30px; min-height: 30px"
+        }
+    }
+}

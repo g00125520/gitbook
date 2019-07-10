@@ -6,3 +6,8 @@
 - git push origin --delete shumeng，删除远程分支；
 - git stash; git stash pop;缓存修改之后重新恢复； 
 - git branch -m old new;git push origin :old;git push -set-upstream origin new;修改已提交的本地和远端分支；
+
+
+## problem
+
+- 如何在多个分支上面同时增加一个问题，如：增加一个gitbook插件
