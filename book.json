@@ -19,7 +19,7 @@
         "search",
         "chapter-fold",
         "back-to-top-button",
-        "-expandable-chapters-small",
+        "expandable-chapters-small",
         "-insert-logo"
     ],
     "pluginsConfig" : {

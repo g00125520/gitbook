@@ -2,11 +2,15 @@
 
 ## index
 
+- [数据库索引](https://mp.weixin.qq.com/s/YMbRJwyjutGMD1KpI_fS0A)
+- [MyISAM与InnoDB的索引差异](https://mp.weixin.qq.com/s/FUXPXKfKyjxAvMUFHZm9UQ)
+
 
 
 ## lock
-[Next-Key Lock](https://www.cnblogs.com/zhoujinyi/p/3435982.html)
-[MySQL死锁分析](https://mp.weixin.qq.com/s/Qv5QzzVoUtIB58UmIRG-lQ)
+
+- [Next-Key Lock](https://www.cnblogs.com/zhoujinyi/p/3435982.html)
+- [MySQL死锁分析](https://mp.weixin.qq.com/s/Qv5QzzVoUtIB58UmIRG-lQ)
 
 
 ## transcation
