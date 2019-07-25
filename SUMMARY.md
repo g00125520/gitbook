@@ -12,6 +12,9 @@
   * [kafka](java/kafka.md)
   * [hbase](java/hbase.md)
   * [maven](java/mvn.md)
+  * [java](java/java.md)
+* Golang 
+  * [golang](golang/golang.md)
 * Arch
   * [lock](arch/lock.md)
   * [raft](arch/raft.md)
