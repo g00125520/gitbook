@@ -7,14 +7,19 @@ maven本质事一个插件框架，所有的任务都交给插件完成。每个
 
 [creating archetypes](http://maven.apache.org/guides/mini/guide-creating-archetypes.html)
 
-根据骨架生成项目：mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.3 -X
-
-生成项目骨架：mvn archetype:generate  -DgroupId=com.demo  -DartifactId=App  -DarchetypeGroupId=org.apache.maven.archetypes  -DarchetypeArtifactId=maven-archetype-archetype，
-
-使用本地的骨架：mvn archetype:generate -DarchetypeCatalog=”local”,更新本地骨架列表：mvn archetype:crawl 
-
+```java
+//根据骨架生成项目：
+mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.3 -X
+//生成项目骨架：
+mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes  -DarchetypeArtifactId=maven-archetype-archetype   -DgroupId=com.demo  -DartifactId=App
+//根据项目生成框架:
+mvn archetype:create-from-project
+//更新本地骨架列表：
+mvn archetype:crawl
+//使用本地的骨架：
+mvn archetype:generate -DarchetypeCatalog=local 
+//使用远程骨架
 mvn org.apache.maven.plugins:maven-archetype-plugin:2.4:generate -DarchetypeCatalog=https://repository.apache.org/content/repositories/snapshots/
-
 mvn org.apache.maven.plugins:maven-archetype-plugin:2.4:generate\
      -DarchetypeGroupId=org.apache.flink \
      -DarchetypeArtifactId=flink-quickstart-java \
@@ -25,3 +30,6 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:2.4:generate\
      -Dversion=0.1 \
      -Dpackage=wikiedits \
      -DinteractiveMode=false
+
+```
+
