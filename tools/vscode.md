@@ -11,4 +11,4 @@
 
 - [vscode plug-in](http://blog.haoji.me/vscode-plugin-overview.html)
 - [electron docs](https://electronjs.org/docs)
-
+- [maven](https://github.com/Microsoft/vscode-maven)
