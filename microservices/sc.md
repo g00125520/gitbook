@@ -9,6 +9,13 @@
 
 
 
+## feign
+
+### feign contract
+
+通过feign.Contract，feign.Contract.BaseContract，feign.Contract.Default的模板方法将“targetType”中包含的所有关于HTTP的附加元信息抽取成结果集。SpringMvcContract继承了Contract.BaseContract并实现了ResourceLoaderAware接口。
+
+
 
 
 ## problems
