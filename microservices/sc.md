@@ -36,3 +36,4 @@ componentscan默认扫描的路径为application类所在的包及子包，如�
 - [book code](https://github.com/huangjava/spring-cloud-docker-microservice-book-code)
 - [eureka,consul,zk](https://www.cnblogs.com/daniels/p/10269140.html)
 - [consul](https://www.consul.io/docs/index.html)
+- [loadbalanced](https://blog.csdn.net/u011063112/article/details/81295376)

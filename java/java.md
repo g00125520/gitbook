@@ -30,3 +30,8 @@ class.forname和classloader.loadclass都可以用来加载目标类，但前者�
 
 ## annotition
 
+
+
+## ref
+
+- [java 5](https://www.ibm.com/developerworks/cn/views/global/libraryview.jsp?sort_by=&show_abstract=true&show_all=&search_flag=&contentarea_by=Java+technology&search_by=%E6%82%A8%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84+5&topic_by=%E6%89%80%E6%9C%89+Java+technology+%E4%B8%BB%E9%A2%98&type_by=%E6%89%80%E6%9C%89+Java+technology+%E7%A7%8D%E7%B1%BB%E5%9E%8B&ibm-search=%E6%90%9C%E7%B4%A2)
