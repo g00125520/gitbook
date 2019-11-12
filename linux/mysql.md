@@ -45,3 +45,6 @@ explain中type字段描述了找到所需数据使用的扫描方式，常见的
 
 
 
+## data
+
+sudo mysql -uroot -pDtDream0209  dmall -e "select id,catalog_template_id,catalog_template_data from catalog_his into outfile '/tmp/dd'"
