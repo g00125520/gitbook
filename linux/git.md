@@ -11,3 +11,8 @@
 ## problem
 
 - 如何在多个分支上面同时增加一个文件，如：增加一个gitbook插件
+
+
+## ref
+
+- [lxf](https://www.liaoxuefeng.com/wiki/896043488029600/897013573512192)
