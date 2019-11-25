@@ -47,3 +47,5 @@ sm原则上不参与国家机密中标识为绝密的项目；信息安全规范
 
 
 当一个select语句同时出现了where, group by, having, order by的时候，正确的执行顺序是:.Where,Group By,Having,Order by
+
+代码、开发设计文档等机密信息提供给用户及合作伙伴应走:Dodo ->  信息安全  -> 对外披露流程
