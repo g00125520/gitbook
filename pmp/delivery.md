@@ -69,3 +69,7 @@ ETL的过程包括:数据抽取;数据转换;数据装载;ETL和ELT的不同在�
 
 
 关于公司Bridge支持CDC数据增量导入说法正确的:仅支持Oracle、MySQL、SQLServer  三种数据库CDC增量导入;CDC数据源包括以下四种，Oracle  CDC、Oracle  Redolog、SQL  Server  CDC、mysqlbinlog;CDC模式数据增量导入到EMR后必须按照数据加载时间做去重操作;
+
+docker rm 是删除容器;docker ps 是显示容器信息;docker rmi 是删除镜像（在删除镜像之前，必须先删除相关容器；除非使用-f参数强制删除）;docker system prune 用来删除不再使用的 docker 对象（会删除所有未被 tag 标记和未被容器使用的镜像）
+
+
