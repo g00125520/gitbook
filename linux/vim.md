@@ -1,5 +1,8 @@
 # vim 
 
+## table of contents
+## skills
+
 - ctl+v,shift+i,esc,同时在多列插入
 - :g/^/m 0，倒序文件，tac，依次找到每一行，并将之移到0行。
 - :g/^/+1 d，删除偶数行，+1定位当前行的下一行，将第二行删除后，第二行标记消失，所以不删除第三行，同：:%norm jdd。
@@ -10,9 +13,28 @@
 - :g/^s*$/d，删除空行；
 
 
+<!-- vim-markdown-toc GFM -->
+
+* [handle markdown](#handle-markdown)
+* [plugins](#plugins)
+* [colors](#colors)
+* [python](#python)
+* [ref](#ref)
+
+<!-- vim-markdown-toc -->
+## handle markdown
+
+- [syntax highlighting,matching rules and mappings for the original markdown and extensions](https://github.com/plasticboy/vim-markdown)
+- [instantly preview finicky markdown files](https://github.com/suan/vim-instant-markdown)
+- [preview markdown](https://github.com/iamcco/markdown-preview.nvim)
+
 ## plugins
 
+- [a minimalist vim plugin manager](https://github.com/junegunn/vim-plug)
 
+## colors 
+
+- [monokai theme for textmate](https://github.com/tomasr/molokai.git)
 
 ## python
 
