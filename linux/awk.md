@@ -16,6 +16,7 @@ last | awk '{S[$3]++} END{for(a in S ) {print S[a],a}}' |uniq| sort -rh
 
 awk -F ':' 'BEGIN {count=0;} {name[count] = $1;count++;}; END{for (i = 0; i < NR; i++) print i, name[i]}' /etc/passwd
 
+awk 'gsub(/\047|\,/,"") {print "/**", $4,"*/", "\n","private String", $1;}' tt.txt 
 
 
 # sed 

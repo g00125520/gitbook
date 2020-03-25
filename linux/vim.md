@@ -31,6 +31,8 @@
 ## plugins
 
 - [a minimalist vim plugin manager](https://github.com/junegunn/vim-plug)
+- [multi cursors](https://github.com/terryma/vim-multiple-cursors)
+- [vim wiki](https://www.vim.org/scripts/script.php?script_id=2226)
 
 ## colors 
 
@@ -42,3 +44,5 @@
 ## ref
 
 - [vimplus](https://github.com/chxuan/vimplus)
+- [galore](https://github.com/wsdjeg/vim-galore-zh_cn)
+- [vim script](https://github.com/lymslive/vimllearn/blob/master/content.md)
