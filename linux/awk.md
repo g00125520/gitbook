@@ -17,6 +17,8 @@ last | awk '{S[$3]++} END{for(a in S ) {print S[a],a}}' |uniq| sort -rh
 awk -F ':' 'BEGIN {count=0;} {name[count] = $1;count++;}; END{for (i = 0; i < NR; i++) print i, name[i]}' /etc/passwd
 
 awk 'gsub(/\047|\,/,"") {print "/**", $4,"*/", "\n","private String", $1;}' tt.txt 
+上面gsub模式匹配失败会导致后面的不执行，从而没有任何输出；下面这样写则没有该问题；另外对于win下面的^M字符，可以在vim中通过:s/^M//g删除，^M的输入方法为：C-v,C-m；
+awk '{gsub(/\047|\,/,""); print "/**", $4,"*/", "\n","private String", $1;}' tt.txt 
 
 
 # sed 
