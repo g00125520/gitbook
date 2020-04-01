@@ -4,7 +4,11 @@ awk '{pattern + action}' {filenames}
 
 内置变量，argc：命令行参数个数；argv：命令行参数列表；environ：支持队列中系统环境变量的使用；filename：文件名；fnr：文件记录数；fs：设置输入域分隔符，等价于-F；nf：记录域的个数，列数；nr：已读记录数；ofs：输出域分割符；ors：输出记录分隔符；rs：控制记录分隔符；$0，整体记录；$1，第一列；$nf，最后一列；
 
-
+交集
+awk 'NR==FNR{ a[$1]=a[$1]+1} NR>FNR{ if(a[$1]>=1 &&b[$1]<1){ print $1;b[$1]=b[$1]+1}}' aaa.txt bbb.txt 
+awk 'NR==FNR && NF {a[$1]+=1;} NR>FNR && NF {if(a[$1]>=1 && b[$1]<1){print $1;b[$1]+=1 }}' a.sf b.sf
+差集
+awk 'NR==FNR{ a[$1]=$1 } NR>FNR{ if(a[$1] == ""){ print $1}}' aaa.txt bbb.txt
 
 awk -F 'updateCycle' 'NR==1 {printf $1 "resourceUpdateType\":\"02\",\"updateCycle" $2}' /tmp/dd
 
