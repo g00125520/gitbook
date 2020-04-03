@@ -33,6 +33,8 @@
 - [a minimalist vim plugin manager](https://github.com/junegunn/vim-plug)
 - [multi cursors](https://github.com/terryma/vim-multiple-cursors)
 - [vim wiki](https://www.vim.org/scripts/script.php?script_id=2226)
+- [vnote](https://github.com/lymslive/vnote)
+- [use vimloo to write classes](https://github.com/lymslive/vimloo)
 
 ## colors 
 
