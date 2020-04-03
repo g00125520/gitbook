@@ -35,6 +35,7 @@
 - [vim wiki](https://www.vim.org/scripts/script.php?script_id=2226)
 - [vnote](https://github.com/lymslive/vnote)
 - [use vimloo to write classes](https://github.com/lymslive/vimloo)
+- [async run](https://github.com/skywind3000/asyncrun.vim)
 
 ## colors 
 
