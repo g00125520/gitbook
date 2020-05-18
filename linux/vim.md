@@ -36,6 +36,7 @@
 - [vnote](https://github.com/lymslive/vnote)
 - [use vimloo to write classes](https://github.com/lymslive/vimloo)
 - [async run](https://github.com/skywind3000/asyncrun.vim)
+- [terminal in vim ](https://github.com/ZSaberLv0/ZFVimTerminal)
 
 ## colors 
 
