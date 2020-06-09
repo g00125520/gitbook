@@ -1,4 +1,5 @@
 * [Home](/)
 * [Bigdata](/bigd/)
 * [Linux](/lin/)
+* [Java](/java/)
 * [Prose](/prose/)
