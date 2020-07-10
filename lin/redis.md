@@ -1,3 +1,5 @@
+# use redis
+
 ## resource
 
 - [redis document](https://redis.io/documentation) 
