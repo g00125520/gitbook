@@ -12,7 +12,33 @@ ap也不是为了高可用而放弃了数据的一致性。从脏读，幻读来
 
 在分布式环境下，对[cap](https://mp.weixin.qq.com/s/3fK7ScVhUGWoTHZ9eBVyJQ)的要求，不管是ap还是cp，并不是完全丢弃另一个，而是优先级问题，在满足c或者a的基础上去追求另外一个。cp，在满足强一致性的要求上去追求a，如过半写入；ap在高可用的基础上去追求数据的一致性，如最终一致性。总的来说，系统以ap为基调，在一些数据一致性要求高的场景用cp进行补充。
 
+## quorum
+
+quorum是抽屉原理的一个应用。假设有n个副本，更新操作在w个副本中更新成功之后，才认为此次更新操作成功。对于读操作而言，至少需要读r个副本才可以读到此次更新的数据，其中w+r>n，即w和r有重叠，一般：w+r=n+1。
+
+hdfs的namenode采用qjm机制（[Quorum Journal Manager](https://hadoop.apache.org/docs/r2.7.1/hadoop-project-dist/hadoop-hdfs/HDFSHighAvailabilityWithQJM.html)）实现hdfs的ha(high availability)。为了实现ha，需要两台namenode机器，一台是active namenode，负责client请求；一台是standby namenode，负责与active namenode数据同步，从而快速failover。数据同步用到了一个三方集群：journal nodes。active namenode和standby namenode都和journal nodes通信，从而实现同步。
+
+每次namenode写editlog时，除向本地磁盘写入外，也会并行向journal nodes集群中的每一个journal node发送写请求，只要大多数的节点返回成功，就认为向集群写入成功。如果有2n+1台节点，最多可容忍n台节点挂掉。
+
+[Hadoop NameNode 高可用 (High Availability) 实现解析](https://developer.ibm.com/zh/articles/os-cn-hadoop-name-node/)
+
 ## paxos
+
+paxos算法是一种基于消息传递的一致性算法（一致性算法有两种实现方式：通过基于锁的共享内存和消息传递），用来解决在分布式系统中的数据一致性问题。paxos的思想是基于quorum（法定人数）机制，少数服从多数，对于少数节点的网络异常，宕机，数据不一致问题等，不重要，消息尽一切努力送达，数据达到最终一致。
+
+在一个决议提议的过程中，其他决议会被否决，否决本身意味着更多的网络io，意味着更多冲突，这些冲突需要额外的开销，代价较大。为解决类似问题，zk对paxos协议进行改进，提出zab协议。zab协议把整个过程分为两个部分，1，选总体；2，进行决议。
+
+[phxpaxos](https://github.com/Tencent/phxpaxos/blob/master/README.zh_CN.md) | [拜占庭模型](https://www.jianshu.com/p/a79d362de138) 
+
+## raft
+
+[raft算法](https://www.jdon.com/artichect/raft.html)
+
+## consistent hashing
+
+一致性哈希算法是一种分布式哈希实现算法，提出了在动态变化的cache环境中，判断哈希算法好坏的四个标准：1，平衡性(balance)，哈希的结果能够尽可能分布到所有的缓存中去，可以使所有的缓存空间都得到利用；2，单调性(monotonicity)，如果有一些内容已经通过哈希分派到了相应的缓存中，又有新的缓存加入到系统中，哈希的结果应该能够保证原有已分配的内容可以被映射到原有或新的缓存中，而不会被映射到旧的缓存中其他的缓存中；3，分散性(spread)，在分布式环境中，终端有可能看不到所有的缓存区，而只能看到其中一部分，当终端希望通过哈希将内容映射到缓存上时，由于不同终端所见的缓存范围有可能不同，从而导致哈希结果不一致，最终相同的内容被映射到不同的缓冲区上，分散性是指上面情况发生的严重程度，好的哈希算法应尽量避免不一致情况发生，也就是尽量降低分散性；4，负载（load），是从另一个角度看待分散性，既然不同的终端可将相同的内容映射到不同的缓冲区中，那么对于一个特定的缓冲区而言，也可能被不同用户映射为不同内容，这种情况应当也是避免的。
+
+环形哈希空间，将obj通过特定的hash函数计算出对应的key值，然后散列到hash环上，然后将机器通过hash算法映射到环上，对象和机器处于同一hash空间中，按照顺时针转动，obj存储到下一个机器中。普通hash求余算法最大的问题就是在有机器添加或者删除之后，造成大量的存储位置失效，不能满足单调性，而一致哈希则有效规避了这个问题。一致哈希算法通过引入虚拟节点来满足平衡性。
 
 ## distribute transcation
 
