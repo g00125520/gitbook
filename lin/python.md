@@ -2,7 +2,7 @@
 
 ## package 4 data science
 
-numpy, matplotlib，pandas，pyplot，math，scipy，tensorflow 
+pytorch, numpy, matplotlib，pandas，pyplot，math，scipy，tensorflow 
 
 ## python in vscode
 
